@@ -1,0 +1,429 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:simpleType name="conjunction">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="and" />
+            <xs:enumeration value="or" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="inputType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="number" />
+            <xs:enumeration value="decimal" />
+            <xs:enumeration value="string" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="weekdays">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Monday" />
+            <xs:enumeration value="Tuesday" />
+            <xs:enumeration value="Wednesday" />
+            <xs:enumeration value="Thursday" />
+            <xs:enumeration value="Friday" />
+            <xs:enumeration value="Saturday" />
+            <xs:enumeration value="Sunday" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="telephoneState">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="CALL_STATE_IDLE" />
+            <xs:enumeration value="CALL_STATE_OFFHOOK" />
+            <xs:enumeration value="CALL_STATE_RINGING" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="useractivityType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="STILL" />
+            <xs:enumeration value="IN_VEHICLE" />
+            <xs:enumeration value="ON_FOOT" />
+            <xs:enumeration value="ON_BICYCLE" />
+            <xs:enumeration value="RUNNING" />
+            <xs:enumeration value="TILTING" />
+            <xs:enumeration value="UNKNOWN" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="restrictedOperator">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="!=" />
+            <xs:enumeration value="=" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="extendedOperator">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="&gt;" />
+            <xs:enumeration value="&lt;" />
+            <xs:enumeration value="&gt;=" />
+            <xs:enumeration value="&lt;=" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="daytimeValueType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Morning" />
+            <xs:enumeration value="Noon" />
+            <xs:enumeration value="Afternoon" />
+            <xs:enumeration value="Evening" />
+            <xs:enumeration value="Night" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="fullOperator">
+        <xs:union memberTypes="restrictedOperator extendedOperator" />
+    </xs:simpleType>
+
+    <xs:simpleType name="sensorType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="weather" />
+            <xs:enumeration value="geofence" />
+            <xs:enumeration value="location" />
+            <xs:enumeration value="time" />
+            <xs:enumeration value="useractivity" />
+            <xs:enumeration value="bluetooth" />
+            <xs:enumeration value="notifications" />
+            <xs:enumeration value="ambientlight" />
+            <xs:enumeration value="screenactivity" />
+            <xs:enumeration value="telephone" />
+            <xs:enumeration value="accelerometer" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="degree">
+        <xs:attribute name="operator" type="fullOperator" use="required" />
+        <xs:attribute name="value" type="xs:integer" use="required" />
+    </xs:complexType>
+
+    <!-- Muss noch genauer spezifiziert werden, da vom Wetterdienst abhängig -->
+    <xs:complexType name="condition">
+        <xs:attribute name="operator" type="restrictedOperator" use="required" />
+        <xs:attribute name="value" type="xs:string" use="required" />
+    </xs:complexType>
+
+    <xs:complexType name="weather">
+        <xs:choice>
+            <xs:element name="condition" type="condition" />
+            <xs:element name="degree" type="degree" />
+        </xs:choice>
+    </xs:complexType>
+
+    <xs:complexType name="time">
+        <xs:choice>
+            <xs:element name="specificTime" type="specificTime" />
+            <xs:element name="daytime" type="daytime" />
+            <xs:element name="timeRange" type="timeRange" />
+            <xs:element name="weekDay" type="weekDay" />
+            <xs:element name="onWeekend" type="onWeekend" />
+            <xs:element name="random" type="random" />
+            <xs:element name="timeInterval" type="timeInterval" />
+        </xs:choice>
+    </xs:complexType>
+
+    <xs:complexType name="weekDay">
+        <xs:sequence maxOccurs="7" minOccurs="1">
+            <xs:element name="day" type="weekdays" />
+        </xs:sequence>
+        <xs:attribute name="operator" type="restrictedOperator" use="required" />
+    </xs:complexType>
+
+    <xs:complexType name="onWeekend">
+        <xs:attribute name="value" type="xs:boolean" use="required" />
+        <xs:attribute name="operator" type="restrictedOperator" use="required" />
+    </xs:complexType>
+
+    <xs:complexType name="specificTime">
+        <xs:attribute name="operator" type="fullOperator" use="required" />
+        <xs:attribute name="value" type="xs:time" use="required" />
+    </xs:complexType>
+
+    <xs:complexType name="timeRange">
+        <xs:attribute name="operator" type="restrictedOperator" use="required" />
+        <xs:attribute name="beginValue" type="xs:time" use="required" />
+        <xs:attribute name="endValue" type="xs:time" use="required" />
+    </xs:complexType>
+
+    <xs:complexType name="daytime">
+        <xs:attribute name="operator" type="restrictedOperator" use="required" />
+        <xs:attribute name="value" type="daytimeValueType" use="required" />
+    </xs:complexType>
+
+    <xs:complexType name="random">
+
+        <xs:attribute name="count" type="xs:int" use="required" />
+        <xs:attribute name="beginValue" type="xs:time" use="required" />
+        <xs:attribute name="endValue" type="xs:time" use="required" />
+    </xs:complexType>
+
+    <xs:complexType name="timeInterval">
+
+        <xs:attribute name="interval" type="xs:int" use="required" />
+        <xs:attribute name="beginValue" type="xs:time" use="required" />
+        <xs:attribute name="endValue" type="xs:time" use="required" />
+    </xs:complexType>
+
+    <xs:complexType name="package">
+        <xs:sequence maxOccurs="unbounded" minOccurs="0">
+            <xs:element name="packageName" type="xs:string" />
+        </xs:sequence>
+        <xs:attribute name="operator" type="restrictedOperator" use="required" />
+    </xs:complexType>
+
+    <xs:complexType name="count">
+        <xs:attribute name="operator" type="fullOperator" use="required" />
+        <xs:attribute name="value" type="xs:decimal" use="required" />
+    </xs:complexType>
+
+    <xs:complexType name="notifications">
+        <xs:choice>
+            <xs:element name="package" type="package" />
+            <xs:element name="count" type="count" />
+        </xs:choice>
+    </xs:complexType>
+
+    <xs:complexType name="deviceNames">
+        <xs:sequence maxOccurs="unbounded" minOccurs="1">
+            <xs:element name="deviceName" type="xs:string" />
+        </xs:sequence>
+        <xs:attribute name="operator" type="restrictedOperator" use="required" />
+    </xs:complexType>
+
+    <xs:complexType name="mac">
+        <xs:sequence maxOccurs="unbounded" minOccurs="1">
+            <xs:element name="address" type="xs:string" />
+        </xs:sequence>
+        <xs:attribute name="operator" type="restrictedOperator" use="required" />
+    </xs:complexType>
+
+    <xs:complexType name="geofence">
+        <xs:attribute name="name" type="xs:string" use="required" />
+        <xs:attribute name="operator" type="restrictedOperator" use="required" />
+        <xs:attribute name="longitude" type="xs:decimal" use="required" />
+        <xs:attribute name="latitude" type="xs:decimal" use="required" />
+        <xs:attribute name="radius" type="xs:decimal" use="required" />
+    </xs:complexType>
+
+    <xs:complexType name="bluetooth">
+        <xs:choice>
+            <xs:element name="name" type="deviceNames" />
+            <xs:element name="count" type="count" />
+            <xs:element name="mac" type="mac" />
+        </xs:choice>
+    </xs:complexType>
+
+    <xs:complexType name="ambientlight">
+        <xs:attribute name="operator" type="fullOperator" use="required" />
+        <xs:attribute name="value" type="xs:decimal" use="required" />
+    </xs:complexType>
+
+    <xs:complexType name="screenactivity">
+        <xs:attribute name="operator" type="restrictedOperator" use="required" />
+        <xs:attribute name="value" type="xs:boolean" use="required" />
+    </xs:complexType>
+
+    <xs:complexType name="accelerometer">
+        <xs:attribute name="operator" type="fullOperator" use="required" />
+        <xs:attribute name="x" type="xs:decimal" />
+        <xs:attribute name="y" type="xs:decimal" />
+        <xs:attribute name="z" type="xs:decimal" />
+        <xs:attribute name="acceleration" type="xs:decimal" />
+    </xs:complexType>
+
+    <xs:complexType name="telephone">
+        <xs:sequence maxOccurs="3" minOccurs="1">
+            <xs:element name="state" type="telephoneState" />
+        </xs:sequence>
+        <xs:attribute name="operator" type="restrictedOperator" use="required" />
+    </xs:complexType>
+
+    <xs:complexType name="useractivity">
+        <xs:sequence maxOccurs="7" minOccurs="1">
+            <xs:element name="activity" type="useractivityType" />
+        </xs:sequence>
+        <xs:attribute name="operator" type="restrictedOperator" use="required" />
+    </xs:complexType>
+
+    <xs:complexType name="sensorexpression">
+        <xs:choice>
+            <xs:element name="weather" type="weather" />
+            <xs:element name="geofence" type="geofence" />
+            <xs:element name="time" type="time" />
+            <xs:element name="useractivity" type="useractivity" />
+            <xs:element name="bluetooth" type="bluetooth" />
+            <xs:element name="notifications" type="notifications" />
+            <xs:element name="ambientlight" type="ambientlight" />
+            <xs:element name="screenactivity" type="screenactivity" />
+            <xs:element name="telephone" type="telephone" />
+            <xs:element name="accelerometer" type="accelerometer" />
+        </xs:choice>
+        <xs:attribute name="negated" type="xs:boolean" use="required" />
+    </xs:complexType>
+
+    <xs:complexType name="sensorconjunction">
+
+        <xs:sequence>
+            <xs:element name="sensorexpression" type="sensorexpression" />
+            <xs:element name="conjunction" type="conjunction" />
+            <xs:choice>
+                <xs:element name="sensorexpression" type="sensorexpression" />
+                <xs:element name="sensorconjunction" type="sensorconjunction" />
+            </xs:choice>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="rules">
+        <xs:sequence maxOccurs="unbounded" minOccurs="1">
+            <xs:element name="rule" type="rule" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="rule">
+        <xs:choice>
+            <xs:element name="sensorexpression" type="sensorexpression" />
+            <xs:element name="sensorconjunction" type="sensorconjunction" />
+        </xs:choice>
+    </xs:complexType>
+
+    <xs:complexType name="questions">
+        <xs:sequence maxOccurs="unbounded" minOccurs="1">
+            <xs:element name="screen" type="screen" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="screen">
+        <xs:sequence maxOccurs="unbounded" minOccurs="1">
+            <xs:choice>
+                <xs:element name="openQuestion" type="openQuestion" />
+                <xs:element name="closedRadiobuttonQuestion" type="closedRadiobuttonQuestion" />
+                <xs:element name="closedCheckboxQuestion" type="closedCheckboxQuestion" />
+                <xs:element name="likertQuestion" type="likertQuestion" />
+                <xs:element name="visualAnalogQuestion" type="visualAnalogQuestion" />
+                <xs:element name="conditionalQuestion" type="conditionalQuestion" />
+            </xs:choice>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="openQuestion">
+        <xs:attribute name="name" type="xs:string" use="required" />
+        <xs:attribute name="inputType" type="inputType" use="required" />
+    </xs:complexType>
+
+    <xs:complexType name="closedRadiobuttonQuestion">
+        <xs:sequence maxOccurs="unbounded" minOccurs="2">
+            <xs:element name="answer" />
+        </xs:sequence>
+        <xs:attribute name="name" type="xs:string" use="required" />
+    </xs:complexType>
+
+    <xs:complexType name="closedRadiobuttonQuestionConditional">
+        <xs:complexContent>
+            <xs:extension base="closedRadiobuttonQuestion">
+                <xs:attribute name="requiredAnswer" type="xs:string" use="required" />
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="likertQuestionConditional">
+        <xs:complexContent>
+            <xs:extension base="likertQuestion">
+                <xs:attribute name="requiredBound" type="xs:integer" use="required" />
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="visualAnalogQuestionConditional">
+        <xs:complexContent>
+            <xs:extension base="visualAnalogQuestion">
+                <xs:attribute name="requiredValue" type="xs:integer" use="required" />
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="closedCheckboxQuestionConditional">
+        <xs:sequence maxOccurs="unbounded" minOccurs="2">
+            <xs:element name="answer">
+                <xs:complexType mixed="true">
+                    <xs:attribute name="required" type="xs:boolean" use="required" />
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="name" type="xs:string" use="required" />
+    </xs:complexType>
+
+    <xs:complexType name="closedCheckboxQuestion">
+        <xs:sequence maxOccurs="unbounded" minOccurs="2">
+            <xs:element name="answer" />
+        </xs:sequence>
+        <xs:attribute name="name" type="xs:string" use="required" />
+    </xs:complexType>
+
+    <xs:complexType name="conditionalQuestion">
+        <xs:sequence>
+            <xs:choice>
+                <xs:element name="closedRadiobuttonQuestionConditional"
+                    type="closedRadiobuttonQuestionConditional" />
+                <xs:element name="closedCheckboxQuestionConditional"
+                    type="closedCheckboxQuestionConditional" />
+                <xs:element name="likertQuestionConditional" type="likertQuestionConditional" />
+                <xs:element name="visualAnalogQuestionConditional"
+                    type="visualAnalogQuestionConditional" />
+            </xs:choice>
+            <xs:choice>
+                <xs:element name="openQuestion" type="openQuestion" />
+                <xs:element name="closedRadiobuttonQuestion" type="closedRadiobuttonQuestion" />
+                <xs:element name="closedCheckboxQuestion" type="closedCheckboxQuestion" />
+                <xs:element name="likertQuestion" type="likertQuestion" />
+                <xs:element name="visualAnalogQuestion" type="visualAnalogQuestion" />
+            </xs:choice>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="likertQuestion">
+        <xs:attribute name="name" type="xs:string" use="required" />
+        <xs:attribute name="minBound" type="xs:integer" use="required" />
+        <xs:attribute name="maxBound" type="xs:integer" use="required" />
+        <xs:attribute name="minDescription" type="xs:string" use="required" />
+        <xs:attribute name="maxDescription" type="xs:string" use="required" />
+    </xs:complexType>
+
+    <xs:complexType name="visualAnalogQuestion">
+        <xs:attribute name="name" type="xs:string" use="required" />
+        <xs:attribute name="minDescription" type="xs:string" use="required" />
+        <xs:attribute name="maxDescription" type="xs:string" use="required" />
+        <xs:attribute name="minBound" type="xs:integer" use="required" />
+        <xs:attribute name="maxBound" type="xs:integer" use="required" />
+        <xs:attribute name="pointer" type="xs:integer" use="required" />
+    </xs:complexType>
+
+    <xs:complexType name="notification">
+        <xs:attribute name="ring" type="xs:boolean" use="required" />
+        <xs:attribute name="vibrate" type="xs:boolean" use="required" />
+        <xs:attribute name="notificationLed" type="xs:boolean" use="required" />
+        <xs:attribute name="maxNotifications" type="xs:int" use="required" />
+        <xs:attribute name="cooldownTime" type="xs:long" use="required" />
+    </xs:complexType>
+
+    <xs:complexType name="sensors">
+        <xs:sequence maxOccurs="unbounded" minOccurs="0">
+            <xs:element name="sensor" type="sensorType" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element name="root">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="questions" type="questions" />
+                <xs:element name="rules" type="rules" />
+                <xs:element name="sensors" type="sensors" />
+                <xs:element name="notification" type="notification" />
+            </xs:sequence>
+            <xs:attribute name="voluntary" type="xs:boolean" />
+        </xs:complexType>
+    </xs:element>
+
+
+</xs:schema>

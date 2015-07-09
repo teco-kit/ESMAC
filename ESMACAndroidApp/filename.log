@@ -1,0 +1,760 @@
+commit af62dec89e2c7dee0a1d16ab1c2cc513ceda86bd
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Wed Apr 15 17:34:58 2015 +0200
+
+    fixed not equal bug for lists
+
+commit a33a7f411b3a8309f57a6154eabb536cd4663b57
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Wed Apr 15 17:24:23 2015 +0200
+
+    fixed critical Bug in Timesensor --> no updated time because old calendar was used
+
+commit 7d873b749dd30dfb5e08e502250d596dada40662
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Wed Apr 15 16:50:27 2015 +0200
+
+    added dialog for activating notificationaccess and bluetooth if they needed but deactivated
+
+commit f542e76a0bffc045e737724b4398e714f8de7f8b
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Wed Apr 15 15:13:28 2015 +0200
+
+    bugfix in Bluetoothsensor where old devices weren't deleted
+    bugfix in prooving of rules in Notification and Timesensor where result always false
+
+commit 0f26e94207ec1137cbe66c64a3bc2aa533a02b69
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Tue Apr 14 14:42:57 2015 +0200
+
+    small bugfix for crash in NotificationSensor
+    fixed Logging in bluetoothsensor
+
+commit 4433f335e0e40466811df334f1e74d0ff13d2037
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Tue Apr 14 14:40:54 2015 +0200
+
+    small bugfix for crash in NotificationSensor
+    fixed Logging in bluetoothsensor
+
+commit 5ab43a93af29b479201a1deb9316d3387b8160f7
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Mon Apr 13 18:47:43 2015 +0200
+
+    Notification Factory added
+
+commit 2e6f5dbeabca226a662f5a0fa0d1c4e5e26ff2db
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Mon Apr 13 18:06:31 2015 +0200
+
+    bugfix in coolDownTime
+
+commit 27120a61b77a9cbd15affbc3fdecb83a8aa804f3
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Sun Apr 12 22:19:23 2015 +0200
+
+    added Licence
+
+commit 95b43418f41e9cfa32ffde5a48716dcd7f07e89f
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Sun Apr 12 16:56:07 2015 +0200
+
+    Bugfixing
+
+commit ac08e8f59daa12443f907b824f83b54817e502a8
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Fri Apr 10 13:20:15 2015 +0200
+
+    fixed false logging
+
+commit 1da94d3ad90a9e55a1da2808a3fae551a8890530
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Fri Apr 10 13:17:35 2015 +0200
+
+    fixed parsingbug and improved logging
+
+commit c7398bfccd91fe743720f980c0ff078e70faab1c
+Author: Robert <asd>
+Date:   Thu Apr 9 19:18:37 2015 +0200
+
+    Bugfixing
+    added pointer to visual analog
+
+commit 117470fe3d016a74aee4b14fdac249b32be98cfe
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Wed Apr 8 18:42:20 2015 +0200
+
+    random and interval in xsd without operator
+
+commit 456c43440cfbac0e5b55d560a413fc6ab2e96bc1
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Wed Apr 8 03:29:04 2015 +0200
+
+    added backup of randomAlarms if Service stops
+    new Mechanism to detect AlarmMode
+
+commit cf414c8f8d28d4dc29e3d90c2ff6d83f3118f77f
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Wed Apr 8 02:43:16 2015 +0200
+
+    added TimeMode and better recognizing for intervalls
+
+commit f75c146401404c16fce860407f1dbe04869a5b91
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Wed Apr 8 02:02:11 2015 +0200
+
+    bugfixing in Logging
+    bugfixinf in Timesensor
+
+commit d8427843a72a6aeed89800f60076806b0c5c5a93
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Wed Apr 8 01:39:56 2015 +0200
+
+    bugfixing in Logging
+
+commit 298be82fdca08e3417ec36ffe8b24736020ca3d8
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Wed Apr 8 00:57:54 2015 +0200
+
+    bugfixing in SensorEvaluationService
+    printStacktrace in Validator
+
+commit 0cb036cf5d103a690d7bd755fc7c7ffab3862a34
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Mon Apr 6 22:17:52 2015 +0200
+
+    added brackets to logs
+    log-architecture changed (testability)
+
+commit bea6ed6e3a5cf35c6da02672e5022cbcf45c7eda
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Mon Apr 6 21:15:54 2015 +0200
+
+    added boolean values to log
+
+commit 128215c065827dbf2524a90550240aac2049476d
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Mon Apr 6 21:15:31 2015 +0200
+
+    changed WeatherSensor for determining condition from main-attribute to icon-attribute
+
+commit e81850c8b8711b1c137438d0dac9270caf6c9f51
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Thu Apr 2 14:56:37 2015 +0200
+
+    changed packages
+    added LoggingAlarm
+
+commit 23fadad4c72eddbc72d08927445f2b7701d93dd2
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Thu Apr 2 13:16:56 2015 +0200
+
+    added Logging functionality (only on submit Button)
+
+commit 5100b76b55d12dad6cc334b807a76af172d1c932
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Thu Apr 2 13:15:47 2015 +0200
+
+    added log to SensorInterface
+    --> getLogColumns to get the columns
+    --> getLog to get the SensorValues
+    --> Logging for CSV --> could be extended per Strategy Pattern
+
+commit 4b2088234724fd651d194e00c90dea2dd707cecc
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Wed Apr 1 20:35:09 2015 +0200
+
+    minor fix in XSD and Parser for consistency
+
+commit cb33c3238050769a4e156373686240de9a1dcd38
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Wed Apr 1 01:12:54 2015 +0200
+
+    bugfixing onPause
+
+commit bad592d8f0e992328d98cafcf4b20f4c09a51427
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Wed Apr 1 01:04:10 2015 +0200
+
+    added new Activity for display Messages
+    added voluntary support
+
+commit 9aabdb00d8ebb86367d77dbe969a5251ba49d875
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Wed Apr 1 01:01:02 2015 +0200
+
+    added new Layout
+
+commit afe333aee454b2595af9a1029b3dd9d1a3b66cfb
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Wed Apr 1 00:59:34 2015 +0200
+
+    generate new alarm Bg fixed
+
+commit 4428ccf3e1d2d4c8c5b0dd0fa668f83f58699450
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Tue Mar 31 13:30:26 2015 +0200
+
+    double activity bug fixed
+
+commit 41b23d488f366bc9121b079619d3259eec1188e5
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Sat Mar 28 22:09:25 2015 +0100
+
+    added timeInterval to Android App
+
+commit 1040124e363fb0e46bd54bf2a01ec2d54ad895f7
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Fri Mar 27 16:35:05 2015 +0100
+
+    added WeatherChangedListener
+
+commit 82dc71a3a35c3613bf1ac4efa50a7f2790f34764
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Fri Mar 27 16:28:47 2015 +0100
+
+    added onWeatherChangedListener
+
+commit 476d479777beaa3397533f1b6d2753311d591063
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Fri Mar 27 12:50:58 2015 +0100
+
+    fixed getAnswer for RadioButtonQuestions
+
+commit 7231279e2c9782b9879e0b99e538a22c94ea5c8b
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Fri Mar 27 12:28:42 2015 +0100
+
+    fixed crash on recreate
+
+commit d729a1ac356f83159cea6544c61a16cffc29aa93
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Thu Mar 26 15:35:41 2015 +0100
+
+    added random alerms
+    fixed bugs for multiple alarms
+    fixed bugs for triggering old alars
+
+commit 4ef5cc7022358523540ec53190414d5becf5551e
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Thu Mar 26 13:03:11 2015 +0100
+
+    no more crashes if android tries to restart Service
+
+commit a35d7a6b2bc26d40fbbc88671ecf8e902c876d3e
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Thu Mar 26 10:07:13 2015 +0100
+
+    added Random timealerts to android app
+
+commit c0d69d3916beff62be80221232adfd37134070d8
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Wed Mar 25 10:52:18 2015 +0100
+
+    Refactoring
+
+commit 794715774224d6e3453e540ec30f45db0f5d33dc
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Wed Mar 25 10:49:33 2015 +0100
+
+    Refactoring
+
+commit ea356c603cdd3db37b2efcd4a65cfb7b77432d80
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Tue Mar 24 23:38:20 2015 +0100
+
+    Refactoring
+
+commit 896247d405913afdb9ce5ea87a59471f6b248dc9
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Tue Mar 24 22:49:05 2015 +0100
+
+    added xsd in lower case
+
+commit cd970b146ec09a220130cd42c909c50c5e71d2a9
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Tue Mar 24 16:47:07 2015 +0100
+
+    deleted XSD
+
+commit 1666ff9df6c44b3545c9b22d51e0025128fafe3d
+Author: Robert <asd>
+Date:   Wed Mar 18 18:38:58 2015 +0100
+
+    added masterarbeit
+
+commit b687f2e9cf21c2da8779f9a600fcb88588bc80fd
+Author: Robert <asd>
+Date:   Wed Mar 18 18:33:54 2015 +0100
+
+    added maxNotification var and reset mechanism
+
+commit fb54ab909130bf04286c1580300dcc4aab316c9f
+Author: Robert <asd>
+Date:   Wed Mar 18 18:33:08 2015 +0100
+
+    added maxNotification var and reset mechanism
+
+commit 4b7f2ab69a9398aa75d4b167a17015fb2d4c7d7a
+Author: Robert <asd>
+Date:   Wed Mar 18 18:29:14 2015 +0100
+
+    added maxNotification var and reset mechanism
+
+commit 60c805d61ebaa3c6cd49a7e4ea591497d7de853c
+Merge: 1644dc2 9d4a2e3
+Author: Robert <asd>
+Date:   Wed Mar 18 10:24:07 2015 +0100
+
+    Merge branch 'master' of killerplauze.no-ip.org:ESMDummyForAndroidStudio
+
+commit 1644dc215983ca310b1e4115e64db24bdd57d4ca
+Author: Robert <asd>
+Date:   Wed Mar 18 10:23:27 2015 +0100
+
+    added new NotificationOptions
+    --> coolDown and maxNotifications added to EvaluationService
+
+commit 9d4a2e3e8d56337aad4cb767be76ce48aac0bdb4
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Wed Mar 18 10:20:06 2015 +0100
+
+    changed xsd
+
+commit ea4ab7c9738780a2474cdaab8b13d8a9d548cc87
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Mon Mar 16 02:00:45 2015 +0100
+
+    changed xsd
+
+commit e671c611055a767aa271d85fbed26f799efe7056
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Tue Feb 17 00:02:59 2015 +0100
+
+    accelerometer added
+
+commit 60906503c6253b91a7ed09f50d04bf6e63872637
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Tue Feb 17 00:02:39 2015 +0100
+
+    fixed Notification --> Default values are used
+
+commit 8c903265959fdd3773bc24dbf9bf29da51f5423b
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Mon Feb 16 22:35:55 2015 +0100
+
+    if no activity is recognized the it returns an empty String
+
+commit 4ae2c6392d2c26303edee258e5316af052974665
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Mon Feb 16 22:18:21 2015 +0100
+
+    Bluetoothsensor (count, name and MAC implemented)
+
+commit c1adf9e485bf12210d74fe9c87e3d9a79780e101
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Mon Feb 16 01:48:36 2015 +0100
+
+    added TelephonSensor
+
+commit 1742205afa659997fb56637d245cc04a91a011d7
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Mon Feb 16 01:11:35 2015 +0100
+
+    added AmbientLight and ScreenActivity to ESMDUMMY
+
+commit 4b7d0a1670a13ff166cde514dd7c0d1b8de922d3
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Fri Feb 13 19:13:01 2015 +0100
+
+    Bugfixing in prooving Notifications
+
+commit 0b089581bdc46e9394715bcbb99d74297412dd11
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Fri Feb 13 19:09:58 2015 +0100
+
+    Notification implmented
+
+commit 03cca637ef4cd3343deb5cbb50f3a451628a9f50
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Fri Feb 13 17:35:11 2015 +0100
+
+    Bluetoothsensor implemented
+
+commit 726a7e519bd7e4292eaa9b3f919f81acdf43c17c
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Fri Feb 13 17:34:51 2015 +0100
+
+    time sensor restarts his Timer every day
+
+commit 2d29c33e730bcc47d7a2cec84d15dfbab9a5d8f6
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Fri Feb 13 15:22:08 2015 +0100
+
+    Useractivity implmented
+
+commit 32ebb4c60e321e1d23a5361578ac52731ad38a7e
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Fri Feb 13 15:21:50 2015 +0100
+
+    TimeSensor bugfix
+
+commit c0d9fad5865862643989d42b584fe3c51861774a
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Fri Feb 13 14:40:04 2015 +0100
+
+    TimeSensor bugfix
+
+commit 4b6b4d0a99fa5357246466c93835d312782a5193
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Fri Feb 13 13:46:35 2015 +0100
+
+    TimeSensor range and specificTime implemented
+
+commit 97203799b392917d4d43e603a6853157fdd31286
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Fri Feb 13 00:12:04 2015 +0100
+
+    added Timesensor to ESMDUMMY
+
+commit d81d6fbc310d79116c2d8f5f96556d8851b45cbb
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Fri Feb 13 00:11:41 2015 +0100
+
+    added Helper to get Booleans from value and results
+
+commit c22f9de62e137f44fb5224f94d4e38127681bd0f
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Fri Feb 13 00:11:07 2015 +0100
+
+    added new Sensors to XSD
+
+commit 4f21a5bf8c26693f142d5ab9369f59a807eaf6c6
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Fri Feb 13 00:10:39 2015 +0100
+
+    Bugfix in getActualDay
+
+commit a5eb09bc579af7d6e6ee6ffa369c6675990cb8eb
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Thu Feb 12 15:05:18 2015 +0100
+
+    timesensor in XSD implmented
+
+commit bee014d1185c1c7bb67c01d48ff8bafafc8f2bda
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Thu Feb 12 15:04:59 2015 +0100
+
+    Time is now Eventbased
+
+commit a1aaf786bc49bf1fe43f06f6bb7f5b15d48d415b
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Thu Feb 12 15:04:40 2015 +0100
+
+    Time is now Eventbased
+
+commit ad99440782e8dc68db30b9910b6958c092bdfb83
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Thu Feb 12 03:25:03 2015 +0100
+
+    proveConjunction fixed == to equals
+
+commit 52e1ece64a0b18f84efdfe94b0feb5a66f4847f9
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Thu Feb 12 03:06:43 2015 +0100
+
+    implemented first two Sensors for ESMDummy
+    new Service implemted (Start_Sticky --> hope it will run alltime)
+    System to proove all Rules
+    Minor changes in XML and XSD
+
+commit 32e198aa9e097a69f1158e5610b47cf528d09878
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Thu Feb 12 03:06:02 2015 +0100
+
+    implemented first two Sensors for ESMDummy
+    new Service implemted (Start_Sticky --> hope it will run alltime)
+    System to proove all Rules
+    Minor changes in XML and XSD
+
+commit 3fc75380b3dcbf4764980ac354dcad2f1bec7b6e
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Wed Feb 11 14:16:42 2015 +0100
+
+    Notification as Parcable to put in Intent
+
+commit fd8bf6aaf2caa4187e8a959224f1d1a3a1324783
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Wed Feb 11 14:07:01 2015 +0100
+
+    SensorEvluationSensor --> Rules and Sensors as Attributes
+
+commit dae7b9df2f13eeda78725dfd3c9a664edd81410c
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Wed Feb 11 14:06:00 2015 +0100
+
+    fixed Submitbutton
+
+commit e2daddebdcfdeab297eaf3966e5ec9b068d23d72
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Wed Feb 11 03:23:20 2015 +0100
+
+    added XSD and XML to GIT
+
+commit ecc364599fb641c7623decbf4a38f562b3ce3d65
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Wed Feb 11 03:17:13 2015 +0100
+
+    DomainSensors implemented
+
+commit c4a261eb683cf686bd27752ae6199c1f28a40b74
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Wed Feb 11 03:16:50 2015 +0100
+
+    new Xerces.jar
+
+commit 3a6fe31860957821f756586d282e1f9060380fff
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Wed Feb 11 03:16:11 2015 +0100
+
+    new Constructor for WeatherSensor, initilized Location per Constructor
+
+commit 3d4dc660b574090a2951e2289e809a70f46d32a2
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Wed Feb 11 03:14:53 2015 +0100
+
+    deleted old xerces-for-android project
+
+commit 93894de725d7bca611db2252d807673a22396c8e
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Fri Feb 6 01:07:13 2015 +0100
+
+    SpeechRecognition and NoiseMeasurement implemented
+
+commit 0ffea02d45c77e99add0a5f376056bcaf4c4296a
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Fri Feb 6 01:06:58 2015 +0100
+
+    SpeechRecognition and NoiseMeasurement implemented
+
+commit 06f17ef05a5724766ea977fbcb7e9c7f5f7fbd6b
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Thu Feb 5 16:17:46 2015 +0100
+
+    CalenderSensor implemented
+
+commit 67673f616c2635b5ed1f28b83e870c4e0ddb5bb3
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Thu Feb 5 04:33:49 2015 +0100
+
+    added CalendarPermission
+
+commit 52dbb09070730f7592984c3f7dea6b1422678b9f
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Thu Feb 5 04:33:26 2015 +0100
+
+    renamed CalendarClasses
+
+commit 77a1d81e05c1f6496825e09da1c80de117a23b96
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Thu Feb 5 04:32:50 2015 +0100
+
+    added CalendarClasses
+
+commit fbe2b56c31fc7b45fcc6478d884499f45b5a896e
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Thu Feb 5 03:25:27 2015 +0100
+
+    fixed closed AcitivitySensor
+
+commit ddbd85f4411608a2478e505d6b9054a7ce5de62f
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Thu Feb 5 03:24:58 2015 +0100
+
+    refactored to GeofenceSensor
+
+commit 2e5165a408598e7f98fc491a4d4f627bcfe8c08e
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Thu Feb 5 03:24:16 2015 +0100
+
+    implemented Geofencing
+
+commit 5955526a61b724402cc335a4f93ab1bac8ac9362
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Thu Feb 5 02:48:25 2015 +0100
+
+    created GeofencingClasses
+
+commit 54abfab802ee686e841681e6a2185d76577383d2
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Wed Feb 4 19:56:30 2015 +0100
+
+    created GeofencingClasses
+
+commit dcc76e3b378472c1333b9fb8a16882f13b6dd45d
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Wed Feb 4 19:01:06 2015 +0100
+
+    SMSSensor implemented (untested, could be only working for Android 4.4 / Stock SMS-App)
+
+commit b5ee5c79004b1fc1ea0bee7ce6518899b1f5ca22
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Wed Feb 4 19:00:56 2015 +0100
+
+    SMSSensor implemented (untested, could be only working for Android 4.4 / Stock SMS-App)
+
+commit d615c34f55d7361ba41923b2754aadcc1dfb5855
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Tue Feb 3 14:47:23 2015 +0100
+
+    Refactoring in AbstractSensorImpl
+
+commit 3d568b9c72fae428376553cc26d30fa2c334d061
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Tue Feb 3 14:46:39 2015 +0100
+
+    implmented TelephonListener
+
+commit e46b70dd137b2cc261f8553a014a44809a7c5ec1
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Tue Feb 3 14:46:26 2015 +0100
+
+    implmented AbstractSensorImplementation
+
+commit 66eae677b5fcb3c1820d424963ccc53e8c16cbcc
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Tue Feb 3 12:34:09 2015 +0100
+
+    refactored Sensor
+
+commit 40f39bf9875629c386565446f7957877c2cbd824
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Tue Feb 3 12:33:08 2015 +0100
+
+    implemented lightsensor
+
+commit 6290d5db11ddf5a50ccae3b79dd04e62d41a41ec
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Tue Feb 3 12:31:19 2015 +0100
+
+    implemented ambientlightsensor
+
+commit cc2157e12670d5756ceac7761c43eefbc3481e25
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Tue Feb 3 12:29:51 2015 +0100
+
+    ambientlight created
+
+commit 08e5b61e08948c4996cd6c99f275ebee47a147f1
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Tue Feb 3 12:28:05 2015 +0100
+
+    implmented accelerometer  proximitysensor
+
+commit a83370722dfcc58199755684bb4601f82969ed6f
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Tue Feb 3 12:27:00 2015 +0100
+
+    implmented accelerometer  proximitysensor
+
+commit 6e22b10f4a633ad46774f9b96a58c8f68ab956bb
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Tue Feb 3 12:19:36 2015 +0100
+
+    changed packagename
+
+commit 8d2d6d49a4289f04408a0eccc77e54586bb7cd30
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Fri Jan 30 19:59:03 2015 +0100
+
+    implmented UserActivityRecognition
+
+commit b8faf0ec1759749307b0098e2be45e3c19b0cc53
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Fri Jan 30 19:58:30 2015 +0100
+
+    added AppActivityChangedSensor
+
+commit 10d5a6f5fbbf1d019876e0125e27d77f4df4442a
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Fri Jan 30 19:58:08 2015 +0100
+
+    AppActivityChangedSensor is deprecated because of new restrictions in Android API 21
+
+commit b84a6bc72a5cd9a9b3ef92e613e8f4d1bb92c246
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Fri Jan 30 19:54:01 2015 +0100
+
+    added AppActivityChangedSensor
+
+commit 015385fb2fa966362d1e4709c385e678b25bc055
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Fri Jan 30 01:38:38 2015 +0100
+
+    delted whitespaces
+
+commit aa18f5123f3a8e33d2f9133f5a1535228bc68a4c
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Fri Jan 30 01:38:11 2015 +0100
+
+    implmented UserActivityRecognition
+
+commit 961a7680d61ed27968411d28203a70c5995c5966
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Thu Jan 29 22:28:08 2015 +0100
+
+    implemented BT-Sensor
+
+commit 2fc8a340d66d250bb5ab5a026ed5fa302ab0b2f2
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Thu Jan 29 22:27:46 2015 +0100
+
+    SensorInterface in all Sensors implemented
+
+commit 6a18cc632f469b74a26b1f938a72e7ad96747150
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Thu Jan 29 16:24:10 2015 +0100
+
+    SensorInterface in NotificationListener implemented
+
+commit 08ab3e6fd59be8cfec08dd88ffb92b51e4ffb302
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Thu Jan 29 16:20:30 2015 +0100
+
+    added SensorInterface to TimeSensor
+
+commit a6326955f2922fbf08573d6734c43bff671c5cd4
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Thu Jan 29 16:13:26 2015 +0100
+
+    implemented Sensorinterface
+
+commit 67fc7f71c3d56633717881859d57426a2c2fdedc
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Thu Jan 29 16:13:10 2015 +0100
+
+    added SensorInterface
+
+commit 6aa4c491c7469d354699987261a81b50cd90bdb7
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Thu Jan 29 13:11:52 2015 +0100
+
+    LocationSensor, added getAddress
+
+commit bce9cb79ce11cd14f899e46a83863906d1c23a06
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Thu Jan 29 13:11:16 2015 +0100
+
+    TimeSensor implemented
+
+commit 2de81144529b496bfb49ebed8fd74bab8f6a1b6f
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Thu Jan 29 02:32:07 2015 +0100
+
+    deleted sensor
+
+commit 7309418482edd4c55e76cdd9e41f5f92cfdbb0ee
+Author: Robert <zetzsche.robert@gmail.com>
+Date:   Thu Jan 29 02:19:55 2015 +0100
+
+    Initial Commit

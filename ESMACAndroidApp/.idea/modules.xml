@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ESMDummyForAndroidStudio.iml" filepath="$PROJECT_DIR$/ESMDummyForAndroidStudio.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sensorlibrary/sensorlibrary.iml" filepath="$PROJECT_DIR$/sensorlibrary/sensorlibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xerces/xerces.iml" filepath="$PROJECT_DIR$/xerces/xerces.iml" />
+    </modules>
+  </component>
+</project>

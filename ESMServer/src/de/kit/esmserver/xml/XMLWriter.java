@@ -22,12 +22,27 @@ import de.kit.esmserver.uicomponents.ScreenComponent;
 import de.kit.esmserver.uicomponents.SensorAndNotificationComponent;
 
 public class XMLWriter {
+	
+	private static final long LIMIT = 10000000000L;
+	private static long last = 0;
+	
+	public static long getID() {
+		  // 10 digits.
+		  long id = System.currentTimeMillis() % LIMIT;
+		  if ( id <= last ) {
+		    id = (last + 1) % LIMIT;
+		  }
+		  return last = id;
+	}
 
-	public File writeXMlToFile(List<AbstractWritableComponent> writables) {
+	public long writeXMlToFile(List<AbstractWritableComponent> writables) {
 		String basepath = VaadinService.getCurrent().getBaseDirectory()
 				.getAbsolutePath()
-				+ "/WEB-INF/xsd";
-		File file = new File(basepath + "/masterarbeit.xml");
+				+ "/configurations";
+		long filename = getID();		
+		File file = new File(basepath + "/" + filename + ".xml");
+		System.out.println(basepath);
+		System.out.println(filename);
 		if (!file.exists()) {
 			try {
 				file.createNewFile();
@@ -81,7 +96,7 @@ public class XMLWriter {
 			e.printStackTrace();
 		}
 
-		return file;
+		return filename;
 
 	}
 

@@ -7,21 +7,23 @@ import com.vaadin.ui.Window;
 public class SubmitWindow extends Window {
 	private static final long serialVersionUID = -1229907809528224235L;
 
-	public SubmitWindow() {
+	public SubmitWindow(long code) {
 		super(
 				"Please do the following steps to start your Experience Sampling App:");
+		
+		System.out.println(code);
 
 		VerticalLayout verticalLayout = new VerticalLayout();
 		verticalLayout.addComponent(new Label(
-				"1) Install the ESMDummy App on your Device."));
-		verticalLayout.addComponent(new Label("2) Start the ESMDummy App."));
+				"1) Open the ESM app"));
+		verticalLayout.addComponent(new Label("2) Go to the add new configrations file section."));
 		verticalLayout
 				.addComponent(new Label(
-						"3) Copy the masterarbeit.xml to your external sdcard in the 'de.kit.esmdummy' directory."));
-		verticalLayout.addComponent(new Label("4) Restart the ESMDummy App."));
+						"3) Write down the following code in the input."));
+		verticalLayout.addComponent(new Label("CODE : " + code));
 		verticalLayout
 				.addComponent(new Label(
-						"5) The ESMDummy App is now running with your customizations."));
+						"4) Restart the ESM app"));
 		verticalLayout.setMargin(true);
 
 		center();

@@ -43,7 +43,8 @@ import de.kit.esmserver.xml.XMLWriter;
 @Theme("esmserver")
 public class EsmserverUI extends UI {
 
-	@WebServlet(value = "/*", asyncSupported = true)
+	//@WebServlet(value = "/*", asyncSupported = true)
+	@WebServlet(urlPatterns = {"/app/*", "/VAADIN/*"})
 	@VaadinServletConfiguration(productionMode = false, ui = EsmserverUI.class)
 	public static class Servlet extends VaadinServlet {
 	}
@@ -135,37 +136,16 @@ public class EsmserverUI extends UI {
 
 	private void initializeSubmitButton() {
 		submitButton = new Button("submit");
-		final FileDownloader downloader = new FileDownloader(new FileResource(
-				new File("TEMP"))) {
-
-			@Override
-			public boolean handleConnectorRequest(VaadinRequest request,
-					VaadinResponse response, String path) throws IOException {
-				if (abstractCustomComponents.get(
-						abstractCustomComponents.size() - 1).isValid()) {
-					XMLWriter writer = new XMLWriter();
-					File resource = writer
-							.writeXMlToFile(abstractCustomComponents);
-					this.setFileDownloadResource(new FileResource(resource));
-					boolean handled = super.handleConnectorRequest(request,
-							response, path);
-					resource.delete();
-					return handled;
-				} else {
-					return false;
-				}
-
-			}
-
-		};
-		downloader.extend(submitButton);
 		submitButton.addClickListener(new ClickListener() {
 
 			@Override
 			public void buttonClick(ClickEvent event) {
 				if (abstractCustomComponents.get(
 						abstractCustomComponents.size() - 1).isValid()) {
-					SubmitWindow window = new SubmitWindow();
+					XMLWriter writer = new XMLWriter();
+					long filename = writer
+							.writeXMlToFile(abstractCustomComponents);
+					SubmitWindow window = new SubmitWindow(filename);
 					UI.getCurrent().addWindow(window);
 				} else {
 					Notification.show("There are invalid fields!",

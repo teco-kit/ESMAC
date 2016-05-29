@@ -1,1 +1,1 @@
-include ':app', ':sensorlibrary', ':xerces'
+include ':app', ':sensorlibrary', ':xerces', ':volley'

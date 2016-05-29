@@ -13,19 +13,33 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.EditText;
 
 import org.xml.sax.SAXException;
+import org.apache.http.client.HttpClient;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.HttpResponse;
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.lang.reflect.Array;
+import java.net.URL;
+import java.net.URI;
+import java.net.HttpURLConnection;
 
+import de.kit.esmac.common.Global;
 import de.kit.esmac.domain.ParsedESMDummyObject;
 import de.kit.esmac.R;
 import de.kit.esmac.service.SensorEvaluationService;
+import de.kit.esmac.xml.XMLInterface;
 import de.kit.esmac.xml.XMLParser;
 import de.kit.esmac.xml.XMLValidator;
+import de.kit.esmac.xml.XMLRetriever;
 import de.kit.sensorlibrary.sensor.ambientlightsensor.LightChangedEvent;
 import de.kit.sensorlibrary.sensor.ambientlightsensor.LightSensor;
 import de.kit.sensorlibrary.sensor.ambientlightsensor.LightSensorChangedListener;
@@ -95,6 +109,8 @@ public class MainActivity extends Activity {
         boolean bluetoothEnabled = true;
         boolean notificationAccessAllowed = true;
         boolean isValid = validateXml(textView);
+        System.out.println("The url for the res is: ");
+        System.out.println(Global.restapi);
         if (isValid) {
             XMLParser test = new XMLParser(this);
             try {
@@ -170,7 +186,7 @@ public class MainActivity extends Activity {
             isValid = XMLValidator.validate("sdcard/de.kit.esmdummy/masterarbeit.xml",
                     "sdcard/de.kit.esmdummy/masterarbeit.xsd");
         } catch (IOException e) {
-            textView.setText("XML not found. Please add XML to de.kit.esmdummy folder on sdcard!");
+            textView.setText("XML not found. Please enter the code from the ESM-Server web to add the xml!");
             e.printStackTrace();
         } catch (SAXException e) {
             textView.setText("XML is not valid with XSD in de.kit.esmdummy folder on sdcard. Please use the ESM-Server to create XML-File!");
@@ -241,6 +257,36 @@ public class MainActivity extends Activity {
             }
         }
         return false;
+    }
+
+    public void retrieveXML(View view) throws IOException {
+        EditText codeInput = (EditText) findViewById(R.id.editText);
+        String code = codeInput.getText().toString();
+        if (!code.isEmpty()) {
+            //get request to ESMAC server
+            BufferedReader in = null;
+            String data = null;
+            String[] url = new String[1];
+            url[0] = Global.restapi + code + ".xml";
+            //url[0] = "http://192.168.10.143:8080/ESMServer/configurations/" + code + ".xml";
+            XMLRetriever req = new XMLRetriever(new XMLInterface() {
+                @Override
+                public void processFinish() {
+                    System.out.println("Restarting app");
+                    Intent i = getBaseContext().getPackageManager()
+                            .getLaunchIntentForPackage( getBaseContext().getPackageName() );
+                    i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    finish();
+                    startActivity(i);
+                }
+            });
+            try {
+                req.execute(url);
+            }
+            catch (Exception e) {
+                System.out.println("error " + e.toString());
+            }
+        }
     }
 
 }

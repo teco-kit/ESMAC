@@ -5,5 +5,5 @@ package de.kit.esmac.common;
  */
 public class Global {
 
-    public static String restapi = "http://esmac.teco.edu:8080/configurations/";
+    public static String restapi = "http://esmserver.teco.edu/configurations/";
 }
